@@ -1,12 +1,12 @@
 <?php
-// Check if a session is already active
+
 if (session_status() === PHP_SESSION_NONE) {
-    session_start(); // Start the session only if not already active
+    session_start(); 
 }
 
-// Generate CSRF token if not already present
+
 if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); // Generate a secure token
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32)); 
 }
 
 global $pdo; 
