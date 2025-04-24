@@ -1,28 +1,28 @@
 <?php
 session_start();
-include('db.php'); // Include the database connection
+include('db.php'); 
 
 if (!isset($_SESSION['uid'])) {
     header('Location: login.php');
     exit();
 }
 
-// Get user ID from session
+
 $uid = $_SESSION['uid'];
 
-// Check if a recipe ID is provided in the URL
+
 $recipeId = isset($_GET['rid']) ? intval($_GET['rid']) : null;
 
-// Fetch all recipes created by the user or a specific recipe
+
 if (!$recipeId) {
-    // Fetch all recipes created by the user if no specific recipe is selected
+   
     $sql = "SELECT * FROM recipes WHERE uid = :uid";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':uid', $uid, PDO::PARAM_INT);
     $stmt->execute();
     $recipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
-    // Fetch specific recipe details for editing
+   
     $sql = "SELECT * FROM recipes WHERE rid = :rid AND uid = :uid";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':rid', $recipeId, PDO::PARAM_INT);
@@ -35,7 +35,7 @@ if (!$recipeId) {
     }
 }
 
-// Handle form submission for updating a recipe
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $name = htmlspecialchars($_POST['name']);
     $description = htmlspecialchars($_POST['description']);
@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $instructions = htmlspecialchars($_POST['instructions']);
     $imagePath = $recipe['image']; // Keep the existing image path
 
-    // Handle image upload
+   
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $imageName = basename($_FILES['image']['name']);
         $targetDir = "images/";
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         }
     }
 
-    // Update the recipe in the database
+ 
     $sql = "UPDATE recipes 
             SET name = :name, description = :description, type = :type, 
                ingredients = :ingredients, instructions = :instructions, image = :image 
