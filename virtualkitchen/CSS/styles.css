@@ -1,0 +1,282 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-header {
+  background-color: #2a2a72;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-weight: bold;
+}
+
+nav a:hover,
+.logout-btn:hover,
+.success-message a:hover {
+  color: #d4af37;
+  text-decoration: underline;
+}
+
+nav a.active {
+  color: #d4af37;
+}
+
+
+.banner,
+img,
+.recipe-image {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  border-radius: 5px;
+}
+
+img,
+.recipe-image {
+  border: 2px solid #2a2a72;
+  max-width: 600px;
+}
+
+.recipe-image {
+  border-color: #d4af37;
+  max-width: 400px;
+}
+
+h1 {
+  text-align: center;
+  color: #2a2a72;
+  margin-top: 20px;
+}
+
+
+h2,
+.recipe-card h3,
+.success-message {
+  color: #2a2a72;
+  text-align: ;
+}
+
+a {
+  color: #d4af37;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+footer {
+  background-color: #2a2a72;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+form,
+.recipe-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+form label,
+.recipe-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #2a2a72;
+}
+
+form input,
+.recipe-form input,
+.recipe-form textarea,
+.recipe-form select,
+input[type="text"],
+input[type="search"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+form button,
+.recipe-form button,
+.recipe-form .submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #2a2a72;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+form button:hover,
+.recipe-form button:hover,
+.recipe-form .submit-btn:hover {
+  background-color: #1e1e5c;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.success-message {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.success-message a {
+  color: #d4af37;
+}
+
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 16px;
+}
+
+.button-container {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.action-btn {
+  display: inline-block;
+  background-color: #0078d4;
+  color: white;
+  padding: 15px 25px;
+  margin: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #005a9e;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.add-btn {
+  background-color: #28a745;
+}
+
+.add-btn:hover {
+  background-color: #218838;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.search-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+#search-bar {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button[type="submit"] {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #0078d4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.recipe-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+}
+
+.recipe-image-small {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.recipe-info {
+  flex: 1;
+}
+.logout-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.logout-btn:hover {
+  color: #d4af37;
+}
+.logo {
+  width: 120px; 
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+
